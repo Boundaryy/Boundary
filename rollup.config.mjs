@@ -2,7 +2,7 @@ import svelte from 'rollup-plugin-svelte';
 import commonjs from '@rollup/plugin-commonjs';
 import resolve from '@rollup/plugin-node-resolve';
 import livereload from 'rollup-plugin-livereload';
-import terser from '@rollup/plugin-terser';  // 여기서 default import로 수정합니다
+import terser from '@rollup/plugin-terser';  // 기본 임포트
 import css from 'rollup-plugin-css-only';
 
 const production = !process.env.ROLLUP_WATCH;
@@ -13,7 +13,7 @@ export default {
     sourcemap: true,
     format: 'iife',
     name: 'app',
-    file: 'public/build/bundle.js'
+    file: 'public/build/bundle.js'  // output file path
   },
   plugins: [
     svelte({
@@ -21,7 +21,7 @@ export default {
         dev: !production
       }
     }),
-    css({ output: 'bundle.css' }),
+    css({ output: 'public/build/bundle.css' }),  // output path for CSS
 
     resolve({
       browser: true,
@@ -29,9 +29,9 @@ export default {
     }),
     commonjs(),
 
-    !production && livereload('public'),
+    !production && livereload('public/build'),  // livereload path
 
-    production && terser()
+    production && terser()  // 플러그인 사용
   ],
   watch: {
     clearScreen: false
