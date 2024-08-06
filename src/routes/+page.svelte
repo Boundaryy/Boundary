@@ -1,3 +1,11 @@
+<script>
+    import { goto } from '$app/navigation';
+
+    function handleSignupClick() {
+        goto('auth/signup'); 
+    }
+</script>
+
 <style>
 .container {
     width: 375px;
@@ -52,7 +60,11 @@
 </style>
 
 <div class="container"> 
-<img src="/Mainlogo.png" alt="Logo" class="logo">
-<a href="/signup" class="signup-button" >회원가입</a>
-<div class="footer">©Barder</div> 
+    <img src="/Mainlogo.png" alt="Logo" class="logo">
+    <button class="signup-button" on:click={handleSignupClick}>
+        회원가입
+    </button>
+    <div class="footer">©Barder</div> 
 </div>
+
+
