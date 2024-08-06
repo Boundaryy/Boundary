@@ -55,7 +55,7 @@
       color: #808080;
     }
   </style>
-  
+   
   <div class="container">
     <img src="images/Mainlogo.png" alt="Logo" class="logo">
     <a href="/signup" use:link class="signup-button" >회원가입</a>
