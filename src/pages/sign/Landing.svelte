@@ -33,11 +33,14 @@
     border-radius: 8px;
     color: #FFFFFF;
     font-size: 18pt;
-    font-family: 'Pretendard', sans-serif; 
-    font-weight: 600; 
+    font-family: 'Pretendard', sans-serif;
+    font-weight: 600;
     cursor: pointer;
     position: absolute;
-    bottom: 100px; 
+    bottom: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 
   .signup-button:hover {
