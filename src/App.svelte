@@ -1,8 +1,8 @@
 <script>
     import { onMount } from 'svelte';
     import { Router, Link, Route } from "svelte-routing"
-    import Landing from './pages/Landing.svelte';
-    import Signup from './pages/Signup.svelte';
+    import Landing from './pages/sign/Landing.svelte';
+    import Signup from './pages/sign/Signup.svelte';
     
     export let url = "";
   </script>
