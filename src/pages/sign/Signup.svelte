@@ -109,11 +109,11 @@
   </div>
   <div class="icon-container">
     <div class="icon">
-      <img src="" alt="아이콘" />
+      <img src="images/childIcon.png" alt="아이콘" />
       <p>아이로 회원가입</p>
     </div>
     <div class="icon">
-      <img src="" alt="부모 아이콘" />
+      <img src="images/parentIcon.png" alt="부모 아이콘" />
       <p>부모로 회원가입</p>
     </div>
   </div>
