@@ -2,7 +2,7 @@
   import { navigate } from "svelte-routing";
   import { onMount } from 'svelte';
 
-  let selectedOption = null; // 선택된 옵션 상태
+  let selectedOption = null; 
 
   function handleIconClick(option) {
       selectedOption = option;
@@ -10,11 +10,10 @@
 
   function handleSubmit() {
       if (!selectedOption) {
-          alert('이미지를 선택해 주세요.'); // 선택하지 않았을 때 알림
-      } else {
-          // 선택된 옵션에 따라 페이지 이동 또는 다른 작업 수행
+          alert('이미지를 선택해 주세요.'); 
+              } else {
           console.log('선택된 옵션:', selectedOption);
-          navigate('/signup2'); // /signup2로 이동
+          navigate('/signup2');
       }
   }
 
@@ -25,13 +24,11 @@
   }
 
   onMount(() => {
-      // 페이지가 로드되었을 때 선택된 상태를 초기화합니다.
       selectedOption = null;
   });
 </script>
 
 <style>
-  /* 스타일 설정 */
   .container {
       width: 375px;
       height: 812px;
