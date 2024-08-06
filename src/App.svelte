@@ -1,18 +1,15 @@
 <script>
     import { onMount } from 'svelte';
-    import Landing from './sign/Landing.svelte';
-    import Signup from './sign/Signup.svelte';
+    import { Router, Link, Route } from "svelte-routing"
+    import Landing from './pages/Landing.svelte';
+    import Signup from './pages/Signup.svelte';
     
-    let currentPage = 'landing'; 
-    function changePage(page) {
-      currentPage = page;
-    }
+    export let url = "";
   </script>
   
   <main>
-    {#if currentPage === 'landing'}
-      <Landing />
-    {:else if currentPage === 'signup'}
-      <Signup />
-    {/if}
+    <Router {url}>
+      <Route path="/" component={Landing} />
+      <Route path="/signup" component={Signup} />
+   </Router>
   </main>
