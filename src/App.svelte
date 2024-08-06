@@ -16,7 +16,3 @@
       <Signup />
     {/if}
   </main>
-  
-  <style>
-  </style>
-  
