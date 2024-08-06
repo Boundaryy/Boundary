@@ -1,11 +1,5 @@
 <script>
-  import { navigate } from 'svelte-routing';
-
-  // Define the event handler function
-  function handleButtonClick() {
-    console.log("잘 눌러짐");
-    navigate('sign/Choice');
-  }
+  import {Link, link} from "svelte-routing";
 </script>
 
 <style>
@@ -60,8 +54,6 @@
 
 <div class="container">
   <img src="../src/images/Mainlogo.png" alt="Logo" class="logo">
-  <button class="signup-button" on:click={handleButtonClick}>
-    회원가입
-  </button>
+  <a href="/signup" use:link class="signup-button" >회원가입</a>
   <div class="footer">©Barder</div>
 </div>
