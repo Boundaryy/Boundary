@@ -52,20 +52,20 @@
 
   .header h1 {
       color: #5772FF;
-      font-size: 24px;
+      font-size: 18px;
       font-weight: 700;
       margin: 0;
   }
 
   .header h2 {
-      font-size: 32px;
+      font-size: 28px;
       font-weight: 700;
       margin: 10px 0;
   }
 
   .header p {
-      color: #808080;
-      font-size: 16px;
+      color: #898989;
+      font-size: 14px;
       margin: 5px 0;
   }
 
@@ -97,7 +97,7 @@
 
   .icon p {
       color: #808080;
-      font-size: 16px;
+      font-size: 18px;
       font-weight: 500;
       margin: 0;
   }
