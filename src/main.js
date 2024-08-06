@@ -1,4 +1,4 @@
-import App from './sign/Sign.svelte';
+import App from './sign/Landing.svelte';
 
 const app = new App({
     target: document.body,
