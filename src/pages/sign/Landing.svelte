@@ -59,5 +59,5 @@
   <div class="container">
     <img src="images/Mainlogo.png" alt="Logo" class="logo">
     <a href="/signup" use:link class="signup-button" >회원가입</a>
-    <div class="footer">©Barder</div>
+    <div class="footer">©Barder</div> 
   </div>
