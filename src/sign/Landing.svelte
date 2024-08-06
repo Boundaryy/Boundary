@@ -1,7 +1,5 @@
 <script>
   import { navigate } from 'svelte-routing';
-
-  // Define the event handler function
   function handleButtonClick() {
     console.log("잘 눌러짐");
     navigate('sign/Choice');
