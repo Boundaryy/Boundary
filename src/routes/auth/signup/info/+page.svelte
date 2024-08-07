@@ -1,18 +1,38 @@
 <script>
     import { onMount } from 'svelte';
-  
-    let selectedGender = '남자'; 
+    import { goto } from '$app/navigation';
+
+    let selectedGender = '남자';
+    let phoneNumber = '';
+    let age = '';
+    let name = '';
+    let username = '';
+    let password = '';
 
     function handleGenderClick(gender) {
         selectedGender = gender;
     }
-  
+
     function handleKeyDown(event, gender) {
         if (event.key === 'Enter' || event.key === ' ') {
             handleGenderClick(gender);
         }
     }
-  
+
+    function handleSubmit() {
+        const formData = {
+            phoneNumber,
+            age,
+            name,
+            selectedGender,
+            username,
+            password
+        };
+        console.log('입력된 데이터:', formData);
+
+        goto('/welcome');
+    }
+
     onMount(() => {
         selectedGender = '남자';
     });
@@ -21,7 +41,7 @@
 <style>
     .container {
         width: 375px;
-        height: 100vh; 
+        height: 900px; 
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -153,17 +173,17 @@
 
     <div class="form-group">
         <div>전화 번호를 알려주세요.</div>
-        <input type="text" placeholder="010-1234-5678" />
+        <input type="text" placeholder="010-1234-5678" bind:value={phoneNumber} />
     </div>
 
     <div class="form-group">
         <div>나이를 알려주세요.</div>
-        <input type="text" placeholder="18세" />
+        <input type="text" placeholder="18세" bind:value={age} />
     </div>
 
     <div class="form-group">
         <div>이름을 알려주세요.</div>
-        <input type="text" placeholder="ex) 김바운" />
+        <input type="text" placeholder="ex) 김바운" bind:value={name} />
     </div>
 
     <div class="form-group">
@@ -190,13 +210,13 @@
 
     <div class="form-group">
         <div>사용할 아이디를 입력하세요.</div>
-        <input type="text" placeholder="ex) boundary_baby" />
+        <input type="text" placeholder="ex) boundary_baby" bind:value={username} />
     </div>
 
     <div class="form-group">
         <div>사용할 비밀번호를 입력하세요.</div>
-        <input type="password" />
+        <input type="password" bind:value={password} />
     </div>
 
-    <a href="/main" class="submit-button">가입하기</a>
+    <button class="submit-button" on:click={handleSubmit}>가입하기</button>
 </div>
