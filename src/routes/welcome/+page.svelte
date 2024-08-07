@@ -51,6 +51,7 @@
         text-align: center;
         font-weight: 100;
         margin-bottom: 8px;
+        margin-top: 20px; 
     }
 
     .login-button {
@@ -69,7 +70,7 @@
         text-decoration-line: none;
         text-align: center;
         cursor: pointer;
-        margin-top: 14px;
+        margin-top: 30px; 
         line-height: 50px; 
     }
 
