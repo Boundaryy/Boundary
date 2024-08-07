@@ -1,18 +1,48 @@
 <script>
     import { onMount } from 'svelte';
-  
-    let selectedGender = '남자'; 
+    import { goto } from '$app/navigation';
+
+    let selectedGender = '남자';
+    let phoneNumber = '';
+    let age = '';
+    let name = '';
+    let username = '';
+    let password = '';
 
     function handleGenderClick(gender) {
         selectedGender = gender;
     }
-  
+
     function handleKeyDown(event, gender) {
         if (event.key === 'Enter' || event.key === ' ') {
             handleGenderClick(gender);
         }
     }
-  
+
+    function formatPhoneNumber(event) {
+        let input = event.target.value.replace(/\D/g, '');
+        if (input.length > 3 && input.length <= 7) {
+            input = input.replace(/(\d{3})(\d{1,4})/, '$1-$2');
+        } else if (input.length > 7) {
+            input = input.replace(/(\d{3})(\d{4})(\d{1,4})/, '$1-$2-$3');
+        }
+        phoneNumber = input;
+    }
+
+    function handleSubmit() {
+        const formData = {
+            phoneNumber,
+            age,
+            name,
+            selectedGender,
+            username,
+            password
+        };
+        console.log('입력된 데이터:', formData);
+
+        goto('/welcome');
+    }
+
     onMount(() => {
         selectedGender = '남자';
     });
@@ -21,7 +51,7 @@
 <style>
     .container {
         width: 375px;
-        height: 100vh; 
+        height: 900px; 
         display: flex;
         flex-direction: column;
         align-items: center;
@@ -85,17 +115,10 @@
 
     .gender-container {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        justify-content: center;
+        gap: 10px;
         margin-bottom: 40px; 
         width: 100%;
-    }
-
-    .gender-option-container {
-        display: flex;
-        gap: 10px; 
-        justify-content: center; 
-        width: auto; 
     }
 
     .gender-option {
@@ -153,50 +176,48 @@
 
     <div class="form-group">
         <div>전화 번호를 알려주세요.</div>
-        <input type="text" placeholder="010-1234-5678" />
+        <input type="text" placeholder="010-1234-5678" bind:value={phoneNumber} on:input={formatPhoneNumber} />
     </div>
 
     <div class="form-group">
         <div>나이를 알려주세요.</div>
-        <input type="text" placeholder="18세" />
+        <input type="text" placeholder="18세" bind:value={age} />
     </div>
 
     <div class="form-group">
         <div>이름을 알려주세요.</div>
-        <input type="text" placeholder="ex) 김바운" />
+        <input type="text" placeholder="ex) 김바운" bind:value={name} />
     </div>
 
     <div class="form-group">
         <div>성별을 선택해주세요.</div>
         <div class="gender-container">
-            <div class="gender-option-container">
-                <button
-                    class="gender-option {selectedGender === '남자' ? 'selected' : ''}"
-                    on:click={() => handleGenderClick('남자')}
-                    on:keydown={(e) => handleKeyDown(e, '남자')}
-                >
-                    남자
-                </button>
-                <button
-                    class="gender-option {selectedGender === '여자' ? 'selected' : ''}"
-                    on:click={() => handleGenderClick('여자')}
-                    on:keydown={(e) => handleKeyDown(e, '여자')}
-                >
-                    여자
-                </button>
-            </div>
+            <button
+                class="gender-option {selectedGender === '남자' ? 'selected' : ''}"
+                on:click={() => handleGenderClick('남자')}
+                on:keydown={(e) => handleKeyDown(e, '남자')}
+            >
+                남자
+            </button>
+            <button
+                class="gender-option {selectedGender === '여자' ? 'selected' : ''}"
+                on:click={() => handleGenderClick('여자')}
+                on:keydown={(e) => handleKeyDown(e, '여자')}
+            >
+                여자
+            </button>
         </div>
     </div>
 
     <div class="form-group">
         <div>사용할 아이디를 입력하세요.</div>
-        <input type="text" placeholder="ex) boundary_baby" />
+        <input type="text" placeholder="ex) boundary_baby" bind:value={username} />
     </div>
 
     <div class="form-group">
         <div>사용할 비밀번호를 입력하세요.</div>
-        <input type="password" />
+        <input type="password" bind:value={password} />
     </div>
 
-    <a href="/main" class="submit-button">가입하기</a>
+    <button class="submit-button" on:click={handleSubmit}>가입하기</button>
 </div>
