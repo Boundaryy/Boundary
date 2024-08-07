@@ -1,5 +1,9 @@
 <script>
     let name = '김바운';
+
+    function handleLoginClick() {
+        window.location.href = '/auth/signin';
+    }
 </script>
 
 <style>
@@ -85,6 +89,6 @@
         <div class="message">환영합니다, {name}</div>
         <img src="/happy.png" alt="Happy Emoji" class="emoji" />
         <div class="description">이제, 바운더리에서 <br>학습을 진행할 수 있어요!</div>
-        <button class="login-button">로그인하기</button>
+        <button class="login-button" on:click={handleLoginClick}>로그인하기</button>
     </div>
 </div>
