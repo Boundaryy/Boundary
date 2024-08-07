@@ -19,6 +19,16 @@
         }
     }
 
+    function formatPhoneNumber(event) {
+        let input = event.target.value.replace(/\D/g, '');
+        if (input.length > 3 && input.length <= 7) {
+            input = input.replace(/(\d{3})(\d{1,4})/, '$1-$2');
+        } else if (input.length > 7) {
+            input = input.replace(/(\d{3})(\d{4})(\d{1,4})/, '$1-$2-$3');
+        }
+        phoneNumber = input;
+    }
+
     function handleSubmit() {
         const formData = {
             phoneNumber,
@@ -105,17 +115,10 @@
 
     .gender-container {
         display: flex;
-        flex-direction: column;
-        align-items: center;
+        justify-content: center;
+        gap: 10px;
         margin-bottom: 40px; 
         width: 100%;
-    }
-
-    .gender-option-container {
-        display: flex;
-        gap: 10px; 
-        justify-content: center; 
-        width: auto; 
     }
 
     .gender-option {
@@ -173,7 +176,7 @@
 
     <div class="form-group">
         <div>전화 번호를 알려주세요.</div>
-        <input type="text" placeholder="010-1234-5678" bind:value={phoneNumber} />
+        <input type="text" placeholder="010-1234-5678" bind:value={phoneNumber} on:input={formatPhoneNumber} />
     </div>
 
     <div class="form-group">
@@ -189,22 +192,20 @@
     <div class="form-group">
         <div>성별을 선택해주세요.</div>
         <div class="gender-container">
-            <div class="gender-option-container">
-                <button
-                    class="gender-option {selectedGender === '남자' ? 'selected' : ''}"
-                    on:click={() => handleGenderClick('남자')}
-                    on:keydown={(e) => handleKeyDown(e, '남자')}
-                >
-                    남자
-                </button>
-                <button
-                    class="gender-option {selectedGender === '여자' ? 'selected' : ''}"
-                    on:click={() => handleGenderClick('여자')}
-                    on:keydown={(e) => handleKeyDown(e, '여자')}
-                >
-                    여자
-                </button>
-            </div>
+            <button
+                class="gender-option {selectedGender === '남자' ? 'selected' : ''}"
+                on:click={() => handleGenderClick('남자')}
+                on:keydown={(e) => handleKeyDown(e, '남자')}
+            >
+                남자
+            </button>
+            <button
+                class="gender-option {selectedGender === '여자' ? 'selected' : ''}"
+                on:click={() => handleGenderClick('여자')}
+                on:keydown={(e) => handleKeyDown(e, '여자')}
+            >
+                여자
+            </button>
         </div>
     </div>
 
