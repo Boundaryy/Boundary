@@ -272,19 +272,19 @@
     </div>
 
     <div class="menu">
-        <a href="/result" class="menu-item">
+        <a href="/parent/result" class="menu-item">
             <div class="menu-item-content">
                 <span class="menu-item-text">결과</span>
                 <div class="menu-item-subtext">최근 시험 결과 보기</div>
             </div>
-            <span class="menu-item-arrow">></span>
+            <span class="menu-item-arrow"></span>
         </a>
-        <a href="/chat" class="menu-item">
+        <a href="/parent/result/resolve" class="menu-item">
             <div class="menu-item-content">
                 <span class="menu-item-text">조언 상담</span>
                 <div class="menu-item-subtext">상담사와 채팅하기</div>
             </div>
-            <span class="menu-item-arrow">></span>
+            <span class="menu-item-arrow"></span>
         </a>
     </div>
 </div>

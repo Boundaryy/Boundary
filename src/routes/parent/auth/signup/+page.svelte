@@ -16,7 +16,7 @@
         };
         console.log('Submitted data:', formData);
 
-        goto('/welcome');
+        goto('/parent/home');
     }
 
     function formatPhoneNumber(event) {
