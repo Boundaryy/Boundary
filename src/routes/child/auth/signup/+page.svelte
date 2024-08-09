@@ -1,159 +1,223 @@
 <script>
     import { onMount } from 'svelte';
     import { goto } from '$app/navigation';
-  
-    let selectedOption = null; 
-  
-    function handleIconClick(option) {
-        selectedOption = option;
+
+    let selectedGender = '남자';
+    let phoneNumber = '';
+    let age = '';
+    let name = '';
+    let username = '';
+    let password = '';
+
+    function handleGenderClick(gender) {
+        selectedGender = gender;
     }
-  
-    function handleSubmit() {
-        if (!selectedOption) {
-            alert('이미지를 선택해 주세요.'); 
-        } else {
-            if (selectedOption === '아이') {
-                goto('/auth/signup/info');
-            } else if (selectedOption === '부모') {
-                goto('/auth/signup/parent');
-            }
-        }
-    }
-  
-    function handleKeyDown(event, option) {
+
+    function handleKeyDown(event, gender) {
         if (event.key === 'Enter' || event.key === ' ') {
-            handleIconClick(option);
+            handleGenderClick(gender);
         }
     }
-  
+
+    function formatPhoneNumber(event) {
+        let input = event.target.value.replace(/\D/g, '');
+        if (input.length > 3 && input.length <= 7) {
+            input = input.replace(/(\d{3})(\d{1,4})/, '$1-$2');
+        } else if (input.length > 7) {
+            input = input.replace(/(\d{3})(\d{4})(\d{1,4})/, '$1-$2-$3');
+        }
+        phoneNumber = input;
+    }
+
+    function handleSubmit() {
+        const formData = {
+            phoneNumber,
+            age,
+            name,
+            selectedGender,
+            username,
+            password
+        };
+        console.log('입력된 데이터:', formData);
+
+        goto('/child/home');
+    }
+
     onMount(() => {
-        selectedOption = null;
+        selectedGender = '남자';
     });
-  </script>
-  
-  <style>
+</script>
+
+<style>
     .container {
         width: 375px;
-        height: 812px;
+        height: 900px; 
         display: flex;
         flex-direction: column;
         align-items: center;
-        justify-content: center;
-        position: relative;
+        justify-content: center; 
         background-color: #F3F4F6;
         font-family: 'Pretendard', sans-serif;
         margin: 0 auto;
         overflow: hidden;
         border-radius: 32px;
+        padding: 20px;
     }
-  
+
     .header {
         text-align: left;
-        margin-bottom: 40px;
         width: 100%;
-        padding-left: 85px;
+        margin-bottom: 20px;
+        padding-top: 60px;
     }
-  
+
     .header h1 {
         color: #5772FF;
         font-size: 18px;
         font-weight: 700;
         margin: 0;
     }
-  
+
     .header h2 {
         font-size: 28px;
         font-weight: 700;
         margin: 10px 0;
     }
-  
+
     .header p {
-        color: #898989;
+        color: #808080;
         font-size: 14px;
         margin: 5px 0;
     }
-  
-    .icon-container {
-        display: flex;
-        justify-content: space-around;
+
+    .form-group {
         width: 100%;
-        margin-bottom: 40px;
+        margin-bottom: 20px;
     }
-  
-    .icon {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-  
-    .icon img {
-        width: 100px;
-        height: auto;
-        margin-bottom: 10px;
-        cursor: pointer;
-        transition: transform 0.3s, border 0.3s;
-    }
-  
-    .icon img.selected {
-        border: 3px solid #5772FF;
-        transform: scale(1.1);
-    }
-  
-    .icon p {
-        color: #808080;
+
+    .form-group div {
+        display: block;
         font-size: 18px;
-        font-weight: 500;
-        margin: 0;
+        margin-bottom: 5px;
     }
-  
-    .next-button {
-        width: 310px;
-        height: 50px;
+
+    .form-group input {
+        width: 100%;
+        padding: 10px;
+        border: none;
+        border-bottom: 2px solid #5772FF;
+        background: transparent;
+        font-size: 18px;
+        outline: none;
+        color: #5772FF;
+        max-width: 248px; 
+    }
+
+    .gender-container {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-bottom: 40px; 
+        width: 100%;
+    }
+
+    .gender-option {
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        padding: 5px 10px; 
+        border: 1px solid #808080;
+        border-radius: 20px;
+        font-size: 16px;
+        cursor: pointer;
+        outline: none;
+        text-align: center;
+        width: 60px; 
+        height: 36px; 
+    }
+
+    .gender-option.selected {
+        background-color: #5772FF;
+        color: white;
+        border: 1px solid #5772FF;
+    }
+
+    .submit-button {
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        width: 310px; 
+        height: 50px; 
         background-color: #5772FF;
         border: none;
         border-radius: 8px;
         color: #FFFFFF;
-        font-size: 18pt;
+        font-size: 20px; 
         font-family: 'Pretendard', sans-serif;
         font-weight: 600;
+        text-decoration-line: none;
+        text-align: center;
         cursor: pointer;
-        position: absolute;
-        bottom: 100px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
+        margin-top: 40px; 
+        line-height: 50px; 
     }
-  
-    .next-button:hover {
+
+    .submit-button:hover {
         background-color: #4a63d6;
     }
-  
-    .footer {
-        position: absolute;
-        bottom: 20px;
-        font-size: 14px;
-        color: #808080;
-    }
-  </style>
-  
-  <div class="container">
+</style>
+
+<div class="container">
     <div class="header">
         <h1>Boundary</h1>
         <h2>회원가입</h2>
-        <p>아이와 부모님을 선택해 주세요.</p>
+        <p>서비스에서 사용될 정보를 알려주세요.</p>
     </div>
-    <div class="icon-container">
-        <button class="icon" tabindex="0" on:click={() => handleIconClick('아이')} on:keydown={(e) => handleKeyDown(e, '아이')}>
-            <img src="/childIcon.png" alt="아이 아이콘" class:selected={selectedOption === '아이'} />
-            <p>아이로 회원가입</p>
-        </button>
-        <button class="icon" tabindex="0" on:click={() => handleIconClick('부모')} on:keydown={(e) => handleKeyDown(e, '부모')}>
-            <img src="/parentIcon.png" alt="부모 아이콘" class:selected={selectedOption === '부모'} />
-            <p>부모로 회원가입</p>
-        </button>
+
+    <div class="form-group">
+        <div>전화 번호를 알려주세요.</div>
+        <input type="text" placeholder="010-1234-5678" bind:value={phoneNumber} on:input={formatPhoneNumber} />
     </div>
-    <button class="next-button" on:click={handleSubmit}>다음으로</button>
-    <div class="footer">©Boundary</div>
-  </div>
-  
+
+    <div class="form-group">
+        <div>나이를 알려주세요.</div>
+        <input type="text" placeholder="18세" bind:value={age} />
+    </div>
+
+    <div class="form-group">
+        <div>이름을 알려주세요.</div>
+        <input type="text" placeholder="ex) 김바운" bind:value={name} />
+    </div>
+
+    <div class="form-group">
+        <div>성별을 선택해주세요.</div>
+        <div class="gender-container">
+            <button
+                class="gender-option {selectedGender === '남자' ? 'selected' : ''}"
+                on:click={() => handleGenderClick('남자')}
+                on:keydown={(e) => handleKeyDown(e, '남자')}
+            >
+                남자
+            </button>
+            <button
+                class="gender-option {selectedGender === '여자' ? 'selected' : ''}"
+                on:click={() => handleGenderClick('여자')}
+                on:keydown={(e) => handleKeyDown(e, '여자')}
+            >
+                여자
+            </button>
+        </div>
+    </div>
+
+    <div class="form-group">
+        <div>사용할 아이디를 입력하세요.</div>
+        <input type="text" placeholder="ex) boundary_baby" bind:value={username} />
+    </div>
+
+    <div class="form-group">
+        <div>사용할 비밀번호를 입력하세요.</div>
+        <input type="password" bind:value={password} />
+    </div>
+
+    <button class="submit-button" on:click={handleSubmit}>가입하기</button>
+</div>
