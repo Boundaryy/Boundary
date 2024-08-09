@@ -1,10 +1,19 @@
+<script>
+  export let title
+  export let explain
+</script>
+
 <style>
  .bar-btn {
     width: 220pt;
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    margin: 20pt 0 0 0;
+    justify-content: flex-start;
+    gap: 5px;
+    margin: 10pt 0 0 0;
+    background-color: #FFFFFF;
+    border-radius: 20px;
+    padding: 10px;
   }
 
   .icon-bg {
@@ -35,11 +44,13 @@
   }
 
   .desc {
-    font-size: 12pt;
+    font-size: 10pt;
     color: #808080;
   }
 
   .arrow-box {
+    position: absolute;
+    right: 40px;
     margin-left: 12pt;
   }
   
@@ -49,8 +60,8 @@
       <img src="/childIcon.png" class="icon-img" alt="">
   </div>
   <div class="text-bg">
-      <div class="title">상황 대처 학습</div>
-      <div class="desc">게임을 통한 학습능력 상승</div>
+      <div class="title">{title}</div>
+      <div class="desc">{explain}</div>
   </div>
   <div class="arrow-box">
       <img src="/right_arrow.svg" alt="">
