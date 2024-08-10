@@ -131,12 +131,12 @@
     </div>
 
     <div class="form-group">
-        <div>사용할 아이디를 입력하세요.</div>
+        <div>아이디를 입력하세요.</div>
         <input type="text" placeholder="ex) boundary_baby" bind:value={username} />
     </div>
 
     <div class="form-group">
-        <div>사용할 비밀번호를 입력하세요.</div>
+        <div>비밀번호를 입력하세요.</div>
         <input type="password" placeholder="비밀번호" bind:value={password} />
     </div>
 
