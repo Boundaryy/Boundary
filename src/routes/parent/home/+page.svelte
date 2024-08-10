@@ -255,7 +255,7 @@
             <div class="calendar-day">21</div>
             <div class="calendar-day active">22</div>
             <div class="calendar-day active">23</div>
-            <div class="calendar-day">24</div>/음하ㅏㅏㅏ//
+            <div class="calendar-day">24</div>
             <div class="calendar-day">25</div>
             <div class="calendar-day active">26</div>
             <div class="calendar-day active">27</div>
