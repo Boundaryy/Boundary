@@ -6,17 +6,6 @@
 </script>
 
 <style>
-  .container {
-    width: 375px;
-    height: 812px;
-    display: flex;
-    flex-direction: column;
-    background-color: #F3F4F6;
-    font-family: 'Pretendard', sans-serif;
-    border-radius: 32px;
-    padding: 30px;
-  }
-    
   .header {
     text-align: left;
     margin: 40px;

@@ -49,21 +49,6 @@
 </script>
 
 <style>
-    .container {
-        width: 375px;
-        height: 900px; 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center; 
-        background-color: #F3F4F6;
-        font-family: 'Pretendard', sans-serif;
-        margin: 0 auto;
-        overflow: hidden;
-        border-radius: 32px;
-        padding: 20px;
-    }
-
     .header {
         text-align: left;
         width: 100%;

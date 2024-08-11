@@ -124,23 +124,6 @@
         margin-right: 5px;
     }
 
-    .container {
-        box-sizing: border-box;
-        padding: 40px;
-        width: 375px;
-        height: 812px;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        position: relative;
-        background-color: #F3F4F6;
-        font-family: 'Pretendard', sans-serif;
-        margin: 0 auto;
-        
-        overflow: hidden;
-        border-radius: 32px;
-    }
-  
     h1 {
       font-size: 24px;
       margin-bottom: 20px;

@@ -1,27 +1,11 @@
 <script>
     import { goto } from '$app/navigation';
-
     function handleSignupClick() {
         goto('choose'); 
     }
 </script>
 
 <style>
-.container {
-    width: 375px;
-    height: 812px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    background-color: #F3F4F6;
-    font-family: 'Pretendard', sans-serif;
-    margin: 0 auto;
-    overflow: hidden;
-    border-radius: 32px;
-}
-
 .logo {
     width: 140px;
     height: auto;

@@ -34,21 +34,6 @@
 </script>
 
 <style>
-    .container {
-        width: 375px;
-        height: 812px; 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start; 
-        background-color: #F3F4F6;
-        font-family: 'Pretendard', sans-serif;
-        margin: 0 auto;
-        overflow: hidden;
-        border-radius: 32px;
-        padding: 20px;
-    }
-
     .header {
         text-align: left;
         width: 100%;

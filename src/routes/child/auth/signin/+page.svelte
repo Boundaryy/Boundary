@@ -20,48 +20,6 @@
 </script>
 
 <style>
-    .container {
-        width: 375px;
-        height: 900px; 
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: flex-start; 
-        background-color: #F3F4F6;
-        font-family: 'Pretendard', sans-serif;
-        margin: 0 auto;
-        overflow: hidden;
-        border-radius: 32px;
-        padding: 20px;
-    }
-
-    .header {
-        text-align: left;
-        width: 100%;
-        margin-bottom: 20px;
-        padding-top: 60px;
-    }
-
-    .header h1 {
-        color: #5772FF;
-        font-size: 18px;
-        font-weight: 700;
-        margin: 0;
-    }
-
-    .header h2 {
-        font-size: 28px;
-        font-weight: 700;
-        margin: 10px 0;
-    }
-
-    p {
-        color: #565656;
-        font-size: 16px;
-        margin: 5px 0;
-        font-weight: 200;
-    }
-
     .form-group {
         width: 100%;
         margin-bottom: 20px;
