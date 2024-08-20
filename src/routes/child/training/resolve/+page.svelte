@@ -6,18 +6,6 @@
 </script>
 
 <style>
-  .header {
-    text-align: left;
-    margin: 40px;
-    width: 100%;
-    display: inline;
-  }
-  .header h2 {
-    font-size: 30px;
-    font-weight: 700;
-    margin: 10px 0;
-  }
-
   .speech-bubble {
     display: flex;
     justify-content: flex-start;
@@ -56,13 +44,6 @@
     margin-bottom: 10px;
   }
 
-  .arrow {
-    height: 60px;
-    rotate: 180deg;
-    top: 77px;
-    left: 22px;
-    position: absolute;
-  }
 
   .send-box{
     position: absolute;
@@ -93,10 +74,28 @@
     height: 26px;
   }
   
+  .arrow {
+    rotate: 180deg;
+    height: 42px;
+  }
+  .arrow-box {
+    width: 110%;
+    display: flex;
+    align-items: center;
+    height: 32px;
+    font-size: 18px;
+    color: #808080;
+    top: 20px;
+    left: 22px;
+  }
+  
 </style>
 
 <div class="container">
-    <img on:click={handleLoginClick} class="arrow" src="/right_arrow.svg" alt="">
+  <div class="arrow-box">
+    <img on:click={handleLoginClick} class="arrow"  src="/right_arrow.svg" alt="">
+    돌아가기
+  </div>
   <div class="header">
     <h2>상황 대처 지능 테스트</h2>
   </div>

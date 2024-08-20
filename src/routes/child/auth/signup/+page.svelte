@@ -49,41 +49,15 @@
 </script>
 
 <style>
-    .header {
-        text-align: left;
-        width: 100%;
-        margin-bottom: 20px;
-        padding-top: 60px;
-    }
-
-    .header h1 {
-        color: #5772FF;
-        font-size: 18px;
-        font-weight: 700;
-        margin: 0;
-    }
-
-    .header h2 {
-        font-size: 28px;
-        font-weight: 700;
-        margin: 10px 0;
-    }
-
-    .header p {
-        color: #808080;
-        font-size: 14px;
-        margin: 5px 0;
-    }
-
+   
     .form-group {
         width: 100%;
-        margin-bottom: 20px;
+        margin: 10px 0;
     }
 
     .form-group div {
         display: block;
         font-size: 18px;
-        margin-bottom: 5px;
     }
 
     .form-group input {
@@ -92,63 +66,36 @@
         border: none;
         border-bottom: 2px solid #5772FF;
         background: transparent;
-        font-size: 18px;
+        font-size: 20px;
         outline: none;
         color: #5772FF;
+        height: 22px;
         max-width: 248px; 
     }
 
     .gender-container {
         display: flex;
         justify-content: center;
-        gap: 10px;
-        margin-bottom: 40px; 
+        row-gap: 30px; /* 간격을 좀 더 늘립니다 */
         width: 100%;
     }
 
     .gender-option {
-        display: flex; 
-        align-items: center; 
-        justify-content: center; 
-        padding: 5px 10px; 
+        margin-top: 5px;
         border: 1px solid #808080;
         border-radius: 20px;
         font-size: 16px;
         cursor: pointer;
         outline: none;
         text-align: center;
-        width: 60px; 
-        height: 36px; 
+        min-width: 80px; /* 최소 너비를 설정합니다 */
+        height: 40px; /* 높이를 약간 늘립니다 */
     }
 
     .gender-option.selected {
         background-color: #5772FF;
         color: white;
         border: 1px solid #5772FF;
-    }
-
-    .submit-button {
-        display: flex; 
-        align-items: center; 
-        justify-content: center; 
-        width: 310px; 
-        height: 50px; 
-        background-color: #5772FF;
-        border: none;
-        border-radius: 8px;
-        color: #FFFFFF;
-        font-size: 20px; 
-        font-family: 'Pretendard', sans-serif;
-        font-weight: 600;
-        text-decoration-line: none;
-        text-align: center;
-        cursor: pointer;
-        margin-top: 40px; 
-        line-height: 50px; 
-    }
-
-    .submit-button:hover {
-        background-color: #4a63d6;
     }
 </style>
 
@@ -201,8 +148,7 @@
 
     <div class="form-group">
         <div>사용할 비밀번호를 입력하세요.</div>
-        <input type="password" bind:value={password} />
+        <input type="password" placeholder="ex) qwer!1234" bind:value={password} />
     </div>
-
-    <button class="submit-button" on:click={handleSubmit}>가입하기</button>
+    <button class="button" on:click={handleSubmit}>가입하기</button>
 </div>

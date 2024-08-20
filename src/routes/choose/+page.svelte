@@ -32,32 +32,7 @@
   </script>
   
   <style>
-    .header {
-        text-align: left;
-        margin-bottom: 40px;
-        width: 100%;
-        padding-left: 85px;
-    }
-  
-    .header h1 {
-        color: #5772FF;
-        font-size: 18px;
-        font-weight: 700;
-        margin: 0;
-    }
-  
-    .header h2 {
-        font-size: 28px;
-        font-weight: 700;
-        margin: 10px 0;
-    }
-  
-    .header p {
-        color: #898989;
-        font-size: 14px;
-        margin: 5px 0;
-    }
-  
+   
     .icon-container {
         display: flex;
         justify-content: space-around;
