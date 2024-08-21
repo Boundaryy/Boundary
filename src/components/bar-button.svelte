@@ -14,6 +14,13 @@
     background-color: #FFFFFF;
     border-radius: 20px;
     padding: 10px;
+    box-shadow: 0px 0px 5px #b3b3b3;
+    transition: .3s;
+  }
+
+  .bar-btn:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 10px #797979;
   }
 
   .icon-bg {

@@ -1,4 +1,5 @@
 <script>
+    import Button from "/src/components/button.svelte";
     import { onMount } from 'svelte';
     import { goto } from '$app/navigation';
 
@@ -150,5 +151,5 @@
         <div>사용할 비밀번호를 입력하세요.</div>
         <input type="password" placeholder="ex) qwer!1234" bind:value={password} />
     </div>
-    <button class="button" on:click={handleSubmit}>가입하기</button>
+    <Button desc="가입하기" href="/child/home" />
 </div>

@@ -1,4 +1,6 @@
 <script>
+    import Button from "/src/components/button.svelte";
+
     import { goto } from '$app/navigation';
     function handleSignupClick() {
         goto('choose'); 
@@ -45,9 +47,7 @@
 
 <div class="container"> 
     <img src="/Mainlogo.png" alt="Logo" class="logo">
-    <button class="signup-button" on:click={handleSignupClick}>
-        회원가입
-    </button>
+    <Button desc="회원가입" href="/choose"/>
     <div class="footer">©Barder</div> 
 </div>
 

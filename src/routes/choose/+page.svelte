@@ -1,6 +1,7 @@
 <script>
     import { onMount } from 'svelte';
     import { goto } from '$app/navigation';
+    import Button from "/src/components/button.svelte";
   
     let selectedOption = null; 
   
@@ -36,14 +37,19 @@
     .icon-container {
         display: flex;
         justify-content: space-around;
+        align-items: center;
         width: 100%;
-        margin-bottom: 40px;
+        padding-top: 50%;
     }
   
     .icon {
         display: flex;
         flex-direction: column;
         align-items: center;
+        border: none;
+        padding: 5px;
+        border-radius: 12px;
+        background-color: #e6e6e6;
     }
   
     .icon img {
@@ -60,33 +66,10 @@
     }
   
     .icon p {
-        color: #808080;
+        color: #000000;
         font-size: 18px;
         font-weight: 500;
         margin: 0;
-    }
-  
-    .next-button {
-        width: 310px;
-        height: 50px;
-        background-color: #5772FF;
-        border: none;
-        border-radius: 8px;
-        color: #FFFFFF;
-        font-size: 18pt;
-        font-family: 'Pretendard', sans-serif;
-        font-weight: 600;
-        cursor: pointer;
-        position: absolute;
-        bottom: 100px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        text-decoration: none;
-    }
-  
-    .next-button:hover {
-        background-color: #4a63d6;
     }
   
     .footer {
@@ -113,7 +96,8 @@
             <p>부모로 회원가입</p>
         </button>
     </div>
-    <button class="next-button" on:click={handleSubmit}>다음으로</button>
+    <!-- 이거 나중에 동적으로 바껴야함-->
+    <Button desc="계속하기" href="/child/auth/signup" />
     <div class="footer">©Boundary</div>
   </div>
   

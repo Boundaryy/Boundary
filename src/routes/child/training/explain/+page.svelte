@@ -1,4 +1,5 @@
 <script>
+    import Button from "/src/components/button.svelte";
     let name = '김바운';
 
     function handleLoginClick() {
@@ -10,7 +11,7 @@
     .emoji {
         width: 300px;
         height: 150px;
-        margin: 20px 0;
+        margin: 160px 0;
     }
 
     .description {
@@ -21,30 +22,6 @@
         margin-bottom: 8px;
         margin-top: 20px; 
     }
-
-    .login-button {
-        display: flex; 
-        align-items: center; 
-        justify-content: center; 
-        width: 310px; 
-        height: 50px; 
-        background-color: #5772FF;
-        border: none;
-        border-radius: 8px;
-        color: #FFFFFF;
-        font-size: 20px; 
-        font-family: 'Pretendard', sans-serif;
-        font-weight: 600;
-        text-decoration-line: none;
-        text-align: center;
-        cursor: pointer;
-        margin-top: 30px; 
-        line-height: 50px; 
-    }
-
-    .login-button:hover {
-        background-color: #4a63d6;
-    }
 </style>
 
 <div class="main-container">
@@ -52,6 +29,6 @@
         <div class="header">상황 대처 학습</div>
         <img src="/conv-image.svg" alt="Happy Emoji" class="emoji" />
         <div class="description">시작하면 상황이 제시됩니다. <br>상황에 맞춰 내가 친구에게 해야할<br>적절한 말을 해봅시다</div>
-        <button class="login-button" on:click={handleLoginClick}>시작하기</button>
+        <Button desc="시작하기" href="/child/training/resolve"/>
     </div>
 </div>

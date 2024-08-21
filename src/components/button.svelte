@@ -1,3 +1,7 @@
+<script>
+    export let desc;
+    export let href;
+</script>
 <style>
 .signup-button {
     width: 310px;
@@ -15,6 +19,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    text-decoration: none;
 }
 
 .signup-button:hover {
@@ -23,5 +28,6 @@
 
 </style>
 
-<button class="signup-button">
-</button>
+<a href="{href}" class="signup-button">
+    {desc}
+</a>
